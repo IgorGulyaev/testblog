@@ -39,9 +39,31 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Static top</a></li>
-                    <li><a href="#">Fixed top</a></li>
+
+                    <?php
+                    // Проверяем, пусты ли переменные логина и id пользователя
+                    if (empty($_SESSION['login']) or empty($_SESSION['id']))
+                    {
+                        echo "<li><span>Guest</span></li>";
+                    } else
+                    {
+                        echo "<li class='active'><a href='#'>".$_SESSION['login']."</a></li>";
+                    }
+                    ?>
+
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
+                        <div class="dropdown-menu">
+                            <?php include("login.php"); ?>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
+                        <div class="dropdown-menu">
+                            <?php include("reg.php"); ?>
+                        </div>
+                    </li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
