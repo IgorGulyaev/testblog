@@ -44,10 +44,11 @@
                     // Проверяем, пусты ли переменные логина и id пользователя
                     if (empty($_SESSION['login']) or empty($_SESSION['id']))
                     {
-                        echo "<li><span>Guest</span></li>";
+                        echo "<li><a href='#'>Guest</a></li>";
                     } else
                     {
                         echo "<li class='active'><a href='#'>".$_SESSION['login']."</a></li>";
+                        echo "<li class='active'><a href='logout.php'>Logout</a></li>";
                     }
                     ?>
 
