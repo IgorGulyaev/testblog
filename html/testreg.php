@@ -18,8 +18,8 @@ $password = trim($password);
 // подключаемся к базе
 include ("bd.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 
-$result = mysql_query("SELECT * FROM users WHERE login='$login'",$db); //извлекаем из базы все данные о пользователе с введенным логином
-$myrow = mysql_fetch_array($result);
+$result = mysqli_query($connect, "SELECT * FROM users WHERE login='$login'"); //извлекаем из базы все данные о пользователе с введенным логином
+$myrow = mysqli_fetch_array($result);
 if (empty($myrow['password']))
 {
     //если пользователя с введенным логином не существует
