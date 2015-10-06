@@ -1,4 +1,4 @@
-<form class="form-signin" action="testreg.php" method="post">
+<form id="login_form" class="form-signin" action="testreg.php" method="post">
     <h2 class="form-signin-heading">Вход</h2>
     <p>
         <label for="login_name" class="sr-only">Ваш логин:<br></label>
